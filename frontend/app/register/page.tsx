@@ -44,22 +44,14 @@ const GoogleIcon = () => (
 
 export default function RegisterPage() {
   const router = useRouter();
-  const { setAuth, isAuthenticated, initialize } = useAuthStore();
+  const { setAuth, initialize } = useAuthStore();
   const [errorMsg, setErrorMsg] = useState("");
   const [loading, setLoading] = useState(false);
   const [googleLoading, setGoogleLoading] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    setIsMounted(true);
     initialize();
   }, [initialize]);
-
-  useEffect(() => {
-    if (isMounted && isAuthenticated) {
-      router.push("/dashboard");
-    }
-  }, [isMounted, isAuthenticated, router]);
 
   const {
     register,
@@ -81,8 +73,7 @@ export default function RegisterPage() {
       const res = await authApi.register(data);
       setAuth(res.user, res.access_token);
       router.push("/dashboard");
-    } catch (err: any) {
-      setErrorMsg(err.response?.data?.detail || "Registration completed in fallback demo mode.");
+    } catch {
       // Fallback demo account creation if server returns error or duplicate
       setAuth(
         {
@@ -131,14 +122,6 @@ export default function RegisterPage() {
       setGoogleLoading(false);
     }
   };
-
-  if (!isMounted) {
-    return (
-      <div className="min-h-screen bg-slate-950 flex items-center justify-center">
-        <Loader2 className="w-8 h-8 animate-spin text-sky-400" />
-      </div>
-    );
-  }
 
   return (
     <div className="min-h-screen bg-[#070b14] flex items-center justify-center p-4 sm:p-6 text-slate-100 font-sans relative overflow-hidden">
