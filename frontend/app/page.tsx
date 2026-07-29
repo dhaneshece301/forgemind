@@ -281,7 +281,7 @@ export default function LandingPage() {
                 Active Prompt Simulation
               </span>
               <p className="text-sm font-semibold text-slate-200 mt-1 font-mono">
-                "{samplePrompts[activePrompt].prompt}"
+                &quot;{samplePrompts[activePrompt].prompt}&quot;
               </p>
             </div>
 
