@@ -16,6 +16,7 @@ import {
   Sparkles,
   Compass,
   FileCheck2,
+  FileCode2,
   BarChart3,
   Cpu,
   Layers,
