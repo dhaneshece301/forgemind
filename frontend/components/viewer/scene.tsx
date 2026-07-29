@@ -30,12 +30,12 @@ export function ViewerScene({ designData }: ViewerSceneProps) {
   const camDistance = maxDim * 2;
 
   return (
-    <div className="w-full h-[700px] min-h-[700px] rounded-lg border border-slate-800 bg-slate-950/50 overflow-hidden relative">
-      <div className="absolute top-4 left-4 z-10 flex flex-col gap-2 pointer-events-none">
-        <div className="bg-slate-900/80 border border-slate-800 rounded px-3 py-2 backdrop-blur-md">
-          <h3 className="text-sm font-semibold text-slate-200">Parametric Preview</h3>
-          <p className="text-xs text-slate-400 mt-1">Geometry: {geometry_type.toUpperCase()}</p>
-          {materialName && <p className="text-xs text-slate-400">Material: {materialName}</p>}
+    <div className="w-full h-[380px] sm:h-[550px] md:h-[700px] min-h-[320px] rounded-lg border border-slate-800 bg-slate-950/50 overflow-hidden relative">
+      <div className="absolute top-3 left-3 sm:top-4 sm:left-4 z-10 flex flex-col gap-2 pointer-events-none">
+        <div className="bg-slate-900/90 border border-slate-800 rounded px-2.5 py-1.5 sm:px-3 sm:py-2 backdrop-blur-md">
+          <h3 className="text-xs sm:text-sm font-semibold text-slate-200">Parametric 3D View</h3>
+          <p className="text-[10px] sm:text-xs text-slate-400 mt-0.5">Geometry: {geometry_type.toUpperCase()}</p>
+          {materialName && <p className="text-[10px] sm:text-xs text-slate-400">Material: {materialName}</p>}
         </div>
       </div>
 

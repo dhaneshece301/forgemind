@@ -14,9 +14,9 @@ export const BomTable: React.FC<BomTableProps> = ({ costData }) => {
 
   return (
     <Card className="space-y-4">
-      <div className="flex items-center justify-between border-b border-slate-800 pb-3">
+      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-800 pb-3">
         <h4 className="text-xs font-semibold text-slate-200 font-mono uppercase tracking-wider">
-          Bill of Materials (BOM) & Component Sourcing Matrix
+          Bill of Materials (BOM) & Sourcing Matrix
         </h4>
         <span className="text-xs text-sky-400 font-mono font-bold">
           Total Unit Cost: {formatCurrency(estCost.total_unit_cost_usd || 850)}

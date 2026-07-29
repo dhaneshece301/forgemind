@@ -53,29 +53,29 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
   return (
     <div className="space-y-5">
       {/* Report Header */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-5 rounded-xl">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 bg-slate-900 border border-slate-800 p-4 sm:p-5 rounded-xl">
         <div>
           <span className="text-[10px] uppercase font-mono font-bold text-sky-400 bg-sky-950 px-2 py-0.5 rounded border border-sky-800">
             Autonomous Manufacturing Report
           </span>
-          <h2 className="text-xl font-bold text-slate-100 mt-2">{report.title}</h2>
-          <p className="text-xs text-slate-400 mt-1 font-mono">Report ID: {report.id}</p>
+          <h2 className="text-lg sm:text-xl font-bold text-slate-100 mt-2">{report.title}</h2>
+          <p className="text-xs text-slate-400 mt-1 font-mono break-all">Report ID: {report.id}</p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Button variant="primary" size="sm" onClick={() => setActiveTab("3d")} className="gap-1.5 text-xs bg-sky-600 hover:bg-sky-500 text-white">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap items-center gap-2 w-full md:w-auto">
+          <Button variant="primary" size="sm" onClick={() => setActiveTab("3d")} className="gap-1.5 text-xs bg-sky-600 hover:bg-sky-500 text-white w-full sm:w-auto justify-center">
             <Box className="w-3.5 h-3.5" />
             View 3D Model
           </Button>
-          <Button variant="outline" size="sm" onClick={handleDownloadPdf} className="gap-1.5 text-xs">
+          <Button variant="outline" size="sm" onClick={handleDownloadPdf} className="gap-1.5 text-xs w-full sm:w-auto justify-center">
             <Download className="w-3.5 h-3.5 text-rose-400" />
             Download PDF
           </Button>
-          <Button variant="outline" size="sm" onClick={handleDownloadMarkdown} className="gap-1.5 text-xs">
+          <Button variant="outline" size="sm" onClick={handleDownloadMarkdown} className="gap-1.5 text-xs w-full sm:w-auto justify-center">
             <Download className="w-3.5 h-3.5" />
-            Markdown Report
+            Markdown
           </Button>
-          <Button variant="secondary" size="sm" onClick={handleDownloadJson} className="gap-1.5 text-xs">
+          <Button variant="secondary" size="sm" onClick={handleDownloadJson} className="gap-1.5 text-xs w-full sm:w-auto justify-center">
             <Code2 className="w-3.5 h-3.5 text-sky-400" />
             Export JSON
           </Button>
@@ -83,10 +83,10 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
       </div>
 
       {/* Tabs Bar */}
-      <div className="flex items-center gap-1 border-b border-slate-800 overflow-x-auto pb-1 text-xs font-medium">
+      <div className="flex items-center gap-1 border-b border-slate-800 overflow-x-auto pb-1 text-xs font-medium no-scrollbar">
         <button
           onClick={() => setActiveTab("overview")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "overview" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >
@@ -96,7 +96,7 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("fea")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "fea" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >
@@ -106,7 +106,7 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("3d")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "3d" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >
@@ -116,7 +116,7 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("bom")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "bom" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >
@@ -126,7 +126,7 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("markdown")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "markdown" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >
@@ -136,7 +136,7 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("json")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors ${
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
             activeTab === "json" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
           }`}
         >

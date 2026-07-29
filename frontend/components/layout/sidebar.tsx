@@ -18,13 +18,19 @@ import { cn } from "@/lib/utils";
 
 import { Logo } from "@/components/ui/logo";
 
-export const Sidebar: React.FC = () => {
+interface SidebarProps {
+  isMobile?: boolean;
+  onCloseMobile?: () => void;
+}
+
+export const Sidebar: React.FC<SidebarProps> = ({ isMobile, onCloseMobile }) => {
   const pathname = usePathname();
   const router = useRouter();
   const { user, logout } = useAuthStore();
 
   const handleLogout = () => {
     logout();
+    if (onCloseMobile) onCloseMobile();
     router.push("/login");
   };
 
@@ -35,12 +41,27 @@ export const Sidebar: React.FC = () => {
   ];
 
   return (
-    <aside className="w-64 bg-slate-950 border-r border-slate-800/80 flex flex-col h-screen sticky top-0 text-slate-300 select-none">
+    <aside
+      className={cn(
+        "bg-slate-950 border-r border-slate-800/80 flex flex-col text-slate-300 select-none",
+        isMobile
+          ? "w-72 h-full"
+          : "w-64 h-screen sticky top-0 hidden md:flex"
+      )}
+    >
       {/* Brand Header */}
       <div className="p-4 border-b border-slate-800/80 flex items-center justify-between">
-        <Link href="/dashboard" className="flex items-center gap-3">
+        <Link href="/dashboard" onClick={onCloseMobile} className="flex items-center gap-3">
           <Logo size="md" mode="dark" />
         </Link>
+        {isMobile && (
+          <button
+            onClick={onCloseMobile}
+            className="p-1.5 rounded-lg text-slate-400 hover:text-slate-200 hover:bg-slate-900 transition-colors"
+          >
+            <LogOut className="w-4 h-4 rotate-180" />
+          </button>
+        )}
       </div>
 
       {/* Agent Status Badge */}
@@ -68,8 +89,9 @@ export const Sidebar: React.FC = () => {
             <Link
               key={item.href}
               href={item.href}
+              onClick={onCloseMobile}
               className={cn(
-                "flex items-center gap-3 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+                "flex items-center gap-3 px-3 py-2.5 text-sm font-medium rounded-md transition-colors",
                 isActive
                   ? "bg-sky-600/15 text-sky-400 border border-sky-500/30"
                   : "text-slate-400 hover:text-slate-100 hover:bg-slate-900"
