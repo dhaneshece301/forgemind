@@ -205,8 +205,11 @@ cd backend
 py -3.12 -m pytest
 ```
 
-To run end-to-end API verification:
-```bash
-cd backend
-py -3.12 verify_api.py
-```
+
+
+---
+
+## 👨‍💻 Author & Credits
+
+Built with ❤️ by **Sabestain** & the ForgeMind X Team.
+
