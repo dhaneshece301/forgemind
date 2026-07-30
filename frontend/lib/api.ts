@@ -38,12 +38,11 @@ const SAMPLE_DEMO_PROJECTS: Project[] = [
     title: "ESP32 Industrial IoT Gateway & PCB Module",
     description: "Multi-sensor industrial telemetry unit with RS485 Modbus, Wi-Fi/BLE, LiPo power management, and CNC aluminum enclosure.",
     category: "Electronics & Embedded Hardware",
-    status: "ready",
+    status: "completed",
     target_budget: 45000,
     target_timeline_weeks: 6,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
-    owner_id: "demo-engineer-1",
   },
   {
     id: "proj-demo-2",
@@ -55,7 +54,6 @@ const SAMPLE_DEMO_PROJECTS: Project[] = [
     target_timeline_weeks: 10,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
-    owner_id: "demo-engineer-1",
   }
 ];
 
@@ -142,7 +140,6 @@ export const projectsApi = {
         target_timeline_weeks: payload.target_timeline_weeks || 8,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
-        owner_id: "demo-engineer-1",
       };
       SAMPLE_DEMO_PROJECTS.unshift(newProj);
       return newProj;
