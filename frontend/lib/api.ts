@@ -35,23 +35,27 @@ api.interceptors.response.use(
 const SAMPLE_DEMO_PROJECTS: Project[] = [
   {
     id: "proj-demo-1",
+    user_id: "demo-engineer-1",
     title: "ESP32 Industrial IoT Gateway & PCB Module",
     description: "Multi-sensor industrial telemetry unit with RS485 Modbus, Wi-Fi/BLE, LiPo power management, and CNC aluminum enclosure.",
     category: "Electronics & Embedded Hardware",
     status: "completed",
     target_budget: 45000,
     target_timeline_weeks: 6,
+    execution_count: 1,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   },
   {
     id: "proj-demo-2",
+    user_id: "demo-engineer-1",
     title: "High-Payload Autonomous Quadcopter Frame",
     description: "Topology-optimized titanium lattice chassis with integrated thermal motor mounts and carbon fiber arm struts.",
     category: "Aerospace & Robotics",
     status: "completed",
     target_budget: 120000,
     target_timeline_weeks: 10,
+    execution_count: 1,
     created_at: new Date().toISOString(),
     updated_at: new Date().toISOString(),
   }
@@ -132,12 +136,14 @@ export const projectsApi = {
     } catch {
       const newProj: Project = {
         id: `proj-${Date.now()}`,
+        user_id: "demo-engineer-1",
         title: payload.title,
         description: payload.description,
         category: payload.category || "Electronics & Embedded Hardware",
         status: "draft",
         target_budget: payload.target_budget || 50000,
         target_timeline_weeks: payload.target_timeline_weeks || 8,
+        execution_count: 0,
         created_at: new Date().toISOString(),
         updated_at: new Date().toISOString(),
       };
