@@ -24,7 +24,6 @@ api.interceptors.request.use((config) => {
   return config;
 });
 
-// Handle 401 response without forcefully redirecting if on public/demo routes
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -175,9 +174,11 @@ export const executionsApi = {
       return {
         id: `exec-${Date.now()}`,
         project_id: projectId,
+        user_id: "demo-engineer-1",
         status: "completed",
         progress_percentage: 100,
-        current_agent_id: "report",
+        current_agent: "report",
+        logs: ["Swarm execution initialized", "Pipeline finished clean"],
         created_at: new Date().toISOString(),
         agent_statuses: [
           { agent_id: "requirements", name: "Requirements Agent", status: "completed" },
@@ -206,9 +207,11 @@ export const executionsApi = {
       return {
         id,
         project_id: "proj-demo-1",
+        user_id: "demo-engineer-1",
         status: "completed",
         progress_percentage: 100,
-        current_agent_id: "report",
+        current_agent: "report",
+        logs: ["Execution completed successfully"],
         created_at: new Date().toISOString(),
         agent_statuses: [],
       };
@@ -232,9 +235,16 @@ export const reportsApi = {
     } catch {
       return {
         id,
+        execution_id: "exec-demo-1",
         project_id: "proj-demo-1",
+        user_id: "demo-engineer-1",
         title: "ESP32 Industrial IoT Gateway & PCB Module",
         executive_summary: "Complete autonomous engineering & electronic design analysis completed.",
+        requirements: {},
+        product_design: {},
+        engineering_simulation: {},
+        cost_and_procurement: {},
+        manufacturing_plan: {},
         markdown_report: "# Engineering Report: ESP32 Industrial IoT Gateway",
         json_report: {},
         created_at: new Date().toISOString(),
