@@ -180,12 +180,12 @@ export const executionsApi = {
         current_agent_id: "report",
         created_at: new Date().toISOString(),
         agent_statuses: [
-          { agent_id: "requirements", name: "Requirements Agent", status: "completed", progress_percentage: 100 },
-          { agent_id: "design", name: "Product Design Agent", status: "completed", progress_percentage: 100 },
-          { agent_id: "simulation", name: "Simulation Agent", status: "completed", progress_percentage: 100 },
-          { agent_id: "cost", name: "Cost & Procurement Agent", status: "completed", progress_percentage: 100 },
-          { agent_id: "manufacturing", name: "Manufacturing Planner Agent", status: "completed", progress_percentage: 100 },
-          { agent_id: "report", name: "Report Generator Agent", status: "completed", progress_percentage: 100 },
+          { agent_id: "requirements", name: "Requirements Agent", status: "completed" },
+          { agent_id: "design", name: "Product Design Agent", status: "completed" },
+          { agent_id: "simulation", name: "Simulation Agent", status: "completed" },
+          { agent_id: "cost", name: "Cost & Procurement Agent", status: "completed" },
+          { agent_id: "manufacturing", name: "Manufacturing Planner Agent", status: "completed" },
+          { agent_id: "report", name: "Report Generator Agent", status: "completed" },
         ],
       };
     }
