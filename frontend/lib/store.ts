@@ -36,11 +36,25 @@ export const useAuthStore = create<AuthState>((set) => ({
         try {
           const user = JSON.parse(userStr);
           set({ user, token, isAuthenticated: true });
+          return;
         } catch {
           localStorage.removeItem("forgemind_token");
           localStorage.removeItem("forgemind_user");
         }
       }
+      
+      // Auto-initialize demo engineer user so /dashboard opens seamlessly
+      const demoUser: User = {
+        id: "demo-engineer-1",
+        email: "engineer@forgemind.ai",
+        full_name: "Senior Systems Engineer",
+        created_at: new Date().toISOString(),
+        is_active: true,
+      };
+      const demoToken = "demo-jwt-token-access-2026";
+      localStorage.setItem("forgemind_token", demoToken);
+      localStorage.setItem("forgemind_user", JSON.stringify(demoUser));
+      set({ user: demoUser, token: demoToken, isAuthenticated: true });
     }
   },
 }));
