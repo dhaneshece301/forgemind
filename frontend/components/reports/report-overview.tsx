@@ -86,9 +86,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
       <div className="flex items-center gap-1 border-b border-slate-800 overflow-x-auto pb-1 text-xs font-medium no-scrollbar">
         <button
           onClick={() => setActiveTab("overview")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "overview" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "overview" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <FileText className="w-3.5 h-3.5" />
           Executive Overview
@@ -96,9 +95,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("fea")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "fea" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "fea" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <BarChart3 className="w-3.5 h-3.5" />
           FEA Simulation & Stress
@@ -106,9 +104,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("3d")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "3d" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "3d" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <Box className="w-3.5 h-3.5" />
           Parametric 3D Preview
@@ -116,9 +113,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("bom")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "bom" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "bom" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <PackageCheck className="w-3.5 h-3.5" />
           BOM & Sourcing Cost
@@ -126,9 +122,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("markdown")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "markdown" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "markdown" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <FileText className="w-3.5 h-3.5" />
           Full Markdown Report
@@ -136,9 +131,8 @@ export const ReportOverview: React.FC<ReportOverviewProps> = ({ report }) => {
 
         <button
           onClick={() => setActiveTab("json")}
-          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${
-            activeTab === "json" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
-          }`}
+          className={`flex items-center gap-2 px-3 py-2 rounded-md transition-colors shrink-0 whitespace-nowrap ${activeTab === "json" ? "bg-sky-950 text-sky-400 border border-sky-800" : "text-slate-400 hover:text-slate-200"
+            }`}
         >
           <Code2 className="w-3.5 h-3.5" />
           Structured JSON Schema
