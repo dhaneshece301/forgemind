@@ -171,6 +171,7 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
             <Input
               label="Full Name"
+              autoComplete="name"
               placeholder="e.g. Dr. Alex Mercer"
               error={errors.full_name?.message}
               {...register("full_name")}
@@ -179,6 +180,7 @@ export default function RegisterPage() {
             <Input
               label="Email Address"
               type="email"
+              autoComplete="email"
               placeholder="engineer@forgemind.ai"
               error={errors.email?.message}
               {...register("email")}
@@ -187,6 +189,7 @@ export default function RegisterPage() {
             <Input
               label="Password"
               type="password"
+              autoComplete="new-password"
               placeholder="••••••••"
               error={errors.password?.message}
               {...register("password")}

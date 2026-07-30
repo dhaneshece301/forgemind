@@ -170,6 +170,7 @@ export default function LoginPage() {
             <Input
               label="Email Address"
               type="email"
+              autoComplete="username"
               placeholder="engineer@forgemind.ai"
               error={errors.email?.message}
               {...register("email")}
@@ -178,6 +179,7 @@ export default function LoginPage() {
             <Input
               label="Password"
               type="password"
+              autoComplete="current-password"
               placeholder="••••••••"
               error={errors.password?.message}
               {...register("password")}

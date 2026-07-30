@@ -35,6 +35,7 @@ export const Button: React.FC<ButtonProps> = ({
     <button
       className={cn(baseStyles, variants[variant], sizes[size], className)}
       disabled={disabled}
+      suppressHydrationWarning
       {...props}
     >
       {children}
